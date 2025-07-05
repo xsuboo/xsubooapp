@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XSUBOO.COM လော့ဂ်အင်</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #15171a;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .header-content {
+            text-align: center;
+            margin-bottom: 24px;
+            width: 100%;
+        }
+        .header-content h1 {
+            color: #2e9eff;
+            font-size: 2em;
+            margin-bottom: 4px;
+            text-shadow: 1px 2px 6px rgba(0,0,0,0.25);
+            letter-spacing: 1px;
+        }
+        .header-content p {
+            color: #bbb;
+            font-size: 1em;
+            margin-top: 0;
+        }
+        .login-container {
+            background-color: #23272e;
+            padding: 28px 18px;
+            border-radius: 10px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+            text-align: center;
+            width: 94vw;
+            max-width: 350px;
+            box-sizing: border-box;
+            margin-bottom: 16px;
+        }
+        h2 {
+            color: #e0e6ed;
+            margin-bottom: 24px;
+            font-size: 1.25em;
+        }
+        .input-group {
+            margin-bottom: 16px;
+            text-align: left;
+            position: relative;
+        }
+        label {
+            display: block;
+            margin-bottom: 6px;
+            color: #a5b6cd;
+            font-weight: bold;
+            font-size: 1em;
+        }
+        .password-wrapper {
+            position: relative;
+            width: 100%;
+        }
+        input[type="password"],
+        input[type="text"] {
+            width: 100%;
+            padding: 12px 38px 12px 12px;
+            border: 1px solid #333b4a;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 1em;
+            background: #181a20;
+            color: #e4eaf2;
+        }
+        input[type="password"]::placeholder,
+        input[type="text"]::placeholder {
+            color: #555e6d;
+            opacity: 1;
+        }
+        .show-password-toggle {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            user-select: none;
+            color: #7ea2cc;
+            font-size: 1.15em;
+            background: none;
+            border: none;
+            padding: 0;
+            height: 28px;
+            width: 34px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .remember-group {
+            margin-bottom: 16px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+        }
+        .remember-group input[type="checkbox"] {
+            margin-right: 8px;
+            accent-color: #118aff;
+        }
+        .remember-group label {
+            color: #a0adc0;
+        }
+        button {
+            background-color: #2e9eff;
+            color: #fff;
+            padding: 12px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+        button:active,
+        button:hover {
+            background-color: #118aff;
+        }
+        .message {
+            margin-top: 16px;
+            font-weight: bold;
+            font-size: 1em;
+        }
+        .message.error {
+            color: #ff637b;
+        }
+        .message.success {
+            color: #52e28a;
+        }
+        .footer-emoji {
+            margin-top: 24px;
+        }
+        .footer-emoji img {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        /* Responsive design for mobile */
+        @media (max-width: 500px) {
+            .login-container {
+                padding: 18px 6vw;
+                border-radius: 8px;
+                width: 98vw;
+                max-width: 99vw;
+            }
+            .header-content {
+                margin-bottom: 14px;
+            }
+            .footer-emoji img {
+                width: 44px;
+                height: 44px;
+            }
+            h2 {
+                font-size: 1.07em;
+            }
+            .show-password-toggle {
+                right: 6px;
+                font-size: 1.05em;
+                height: 24px;
+                width: 28px;
+            }
+        }
+        /* Slideshow text bar */
+        .slideshow-container {
+            width: 100vw;
+            min-width: 100vw;
+            overflow: hidden;
+            background: #1d2b3a;
+            height: 40px;
+            position: relative;
+            margin-bottom: 14px;
+        }
+        .slideshow-text {
+            display: inline-block;
+            white-space: nowrap;
+            color: #9ed1ff;
+            font-size: 1em;
+            position: absolute;
+            right: -60vw;
+            top: 0;
+            height: 40px;
+            line-height: 40px;
+            animation: slide-left 10s linear infinite;
+        }
+        @keyframes slide-left {
+            0% {
+                right: -60vw;
+            }
+            100% {
+                right: 110vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-content">
+        <h1>XSUBOO.COM</h1>
+        <p>သိုင်းလောကသားများစံပျော်ရာ</p>
+    </div>
+    <!-- Slideshow text bar -->
+    <div class="slideshow-container">
+        <div class="slideshow-text">
+            ပုံသေ လျို့ဝှက်နံပါက်မြန်မာလို ၅ လေးလုံးရိုက်၀င်ပါ
+        </div>
+    </div>
+    <!-- Login form -->
+    <div class="login-container" id="loginSection">
+        <h2>လော့ဂ်အင်ဝင်ပါ</h2>
+        <div class="input-group">
+            <label for="password">စကားဝှက်:</label>
+            <div class="password-wrapper">
+                <input type="password" id="password" name="password" placeholder="စကားဝှက် ရိုက်ထည့်ပါ" required>
+                <button type="button" class="show-password-toggle" id="togglePassword" aria-label="Show Password">
+                    👁
+                </button>
+            </div>
+        </div>
+        <div class="remember-group">
+            <input type="checkbox" id="rememberMe" name="rememberMe">
+            <label for="rememberMe" style="margin:0;font-weight:normal;">Remember me</label>
+        </div>
+        <button onclick="checkPassword()">ဝင်မည်</button>
+        <p class="message" id="message"></p>
+    </div>
+    <div class="footer-emoji">
+        <img src="https://xsuboo.com/wp-content/uploads/2025/07/1751547052375.png" alt="xsuboologo">
+    </div>
+    <script>
+        // On load, check if password is remembered
+        window.onload = function() {
+            const remembered = localStorage.getItem("rememberMe");
+            const rememberedPassword = localStorage.getItem("rememberedPassword");
+            if (remembered === "true" && rememberedPassword) {
+                document.getElementById("password").value = rememberedPassword;
+                document.getElementById("rememberMe").checked = true;
+            }
+        }
+
+        // Password show/hide toggle
+        const passwordInput = document.getElementById('password');
+        const togglePasswordBtn = document.getElementById('togglePassword');
+        togglePasswordBtn.addEventListener('click', function() {
+            const type = passwordInput.getAttribute('type');
+            if (type === 'password') {
+                passwordInput.setAttribute('type', 'text');
+                togglePasswordBtn.textContent = "🙈";
+            } else {
+                passwordInput.setAttribute('type', 'password');
+                togglePasswordBtn.textContent = "👁";
+            }
+            passwordInput.focus();
+        });
+
+        // Only allow login with static password '၅၅၅၅'
+        function checkPassword() {
+            const enteredPassword = document.getElementById("password").value;
+            const rememberMeChecked = document.getElementById("rememberMe").checked;
+            const messageElement = document.getElementById("message");
+            if (enteredPassword === "၅၅၅၅") {
+                messageElement.textContent = "ဝင်ရောက်မှု အောင်မြင်ပါသည်။";
+                messageElement.className = "message success";
+                if (rememberMeChecked) {
+                    localStorage.setItem("rememberMe", "true");
+                    localStorage.setItem("rememberedPassword", enteredPassword);
+                } else {
+                    localStorage.removeItem("rememberMe");
+                    localStorage.removeItem("rememberedPassword");
+                }
+                setTimeout(() => {
+                    window.location.href = "https://xsuboo.com";
+                }, 800);
+            } else {
+                messageElement.textContent = "စကားဝှက် မှားယွင်းနေပါသည်။ ထပ်ကြိုးစားပါ။";
+                messageElement.className = "message error";
+            }
+        }
+    </script>
+</body>
+</html>
